@@ -33,6 +33,37 @@
       <div class="blob blob-1"></div>
       <div class="blob blob-2"></div>
       <div class="blob blob-3"></div>
+      <div class="code-bg" aria-hidden="true">
+<pre>import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+df = pd.read_csv("sales.csv")
+df["growth"] = df["revenue"].pct_change()
+model = LinearRegression().fit(X_train, y_train)
+SELECT region, SUM(revenue) FROM orders GROUP BY region;
+def insight(data): return data.describe()
+for epoch in range(100): loss = model.train(batch)
+const app = express(); app.get("/api/report", send);
+git commit -m "turn data into decisions"
+accuracy = model.score(X_test, y_test)  # 0.94
+&lt;section class="hero"&gt;  { display: grid; }
+SELECT * FROM students WHERE gpa &gt; 3.5 ORDER BY gpa DESC;
+plt.plot(df["month"], df["revenue"]); plt.show()
+if (data.length &gt; 0) { renderDashboard(data); }
+neural_net = Sequential([Dense(64), ReLU(), Dense(1)])
+01101000 01101001  10110010 01001101 11010010</pre>
+        <svg class="net-bg" viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+          <g stroke="#a78bfa" stroke-width="1" fill="none" opacity=".55">
+            <path d="M40 50L140 30M40 50L140 110M40 50L140 190M40 150L140 30M40 150L140 110M40 150L140 190M40 250L140 110M40 250L140 190M140 30L260 70M140 30L260 160M140 110L260 70M140 110L260 160M140 190L260 70M140 190L260 160M140 190L260 250M260 70L360 120M260 160L360 120M260 250L360 120"/>
+          </g>
+          <g fill="#f472b6" opacity=".7">
+            <circle cx="40" cy="50" r="6"/><circle cx="40" cy="150" r="6"/><circle cx="40" cy="250" r="6"/>
+            <circle cx="140" cy="30" r="6"/><circle cx="140" cy="110" r="6"/><circle cx="140" cy="190" r="6"/>
+            <circle cx="260" cy="70" r="6"/><circle cx="260" cy="160" r="6"/><circle cx="260" cy="250" r="6"/>
+            <circle cx="360" cy="120" r="8"/>
+          </g>
+        </svg>
+      </div>
     </div>
     <div class="hero-content">
       <p class="hero-greeting reveal-up">Hello, I'm</p>
@@ -49,54 +80,11 @@
       </div>
     </div>
     <div class="hero-photo reveal-right">
-  <div class="orbit" aria-hidden="true">
-    <div class="orbit-ring ring-outer">
-      <span class="chip" style="--a:0deg">Python</span>
-      <span class="chip" style="--a:120deg">SQL</span>
-      <span class="chip" style="--a:240deg">Strategy</span>
+      <div class="photo-ring"></div>
     </div>
-    <div class="orbit-ring ring-inner">
-      <span class="chip chip-sm" style="--a:60deg">Excel</span>
-      <span class="chip chip-sm" style="--a:180deg">Web</span>
-      <span class="chip chip-sm" style="--a:300deg">Insights</span>
-    </div>
-    <div class="orbit-core">
-      <svg viewBox="0 0 200 200" class="core-chart">
-        <defs>
-          <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#fff" stop-opacity=".45"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path class="chart-area" d="M44 152 L72 140 L96 146 L122 120 L144 128 L164 100 L164 172 L44 172 Z" fill="url(#areaGrad)"/>
-        <path class="chart-line" pathLength="1" d="M44 152 L72 140 L96 146 L122 120 L144 128 L164 100" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle class="chart-dot" cx="164" cy="100" r="6.5" fill="#fff"/>
-      </svg>
-      <span class="core-mark">A</span>
-    </div>
-  </div>
-</div>
-    <div class="orbit-ring ring-inner">
-      <span class="chip chip-sm" style="--a:60deg">Excel</span>
-      <span class="chip chip-sm" style="--a:180deg">Web</span>
-      <span class="chip chip-sm" style="--a:300deg">Insights</span>
-    </div>
-    <div class="orbit-core">
-      <svg viewBox="0 0 200 200" class="core-chart">
-        <defs>
-          <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#fff" stop-opacity=".45"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path class="chart-area" d="M44 152 L72 140 L96 146 L122 120 L144 128 L164 100 L164 172 L44 172 Z" fill="url(#areaGrad)"/>
-        <path class="chart-line" pathLength="1" d="M44 152 L72 140 L96 146 L122 120 L144 128 L164 100" fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle class="chart-dot" cx="164" cy="100" r="6.5" fill="#fff"/>
-      </svg>
-      <span class="core-mark">A</span>
-    </div>
-  </div>
-</div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <div class="scroll-arrow"></div>
+    </a>
   </section>
 
   <!-- ─── ABOUT ─── -->
@@ -115,7 +103,7 @@
         </div>
         <div class="about-stats reveal-right">
           <div class="stat-card">
-            <span class="stat-num">9+</span>
+            <span class="stat-num">7+</span>
             <span class="stat-label">Projects Built</span>
           </div>
           <div class="stat-card">
@@ -123,7 +111,7 @@
             <span class="stat-label">Research Papers</span>
           </div>
           <div class="stat-card">
-            <span class="stat-num">40+</span>
+            <span class="stat-num">15+</span>
             <span class="stat-label">Courses Completed</span>
           </div>
           <div class="stat-card">
