@@ -112,31 +112,3 @@ window.addEventListener("scroll", () => {
     a.style.color = a.getAttribute("href") === `#${current}` ? "var(--rose-deep)" : "";
   });
 });
-
-
-/* 8 ─ EFFORT HEATMAP (light background in the hero) */
-(function () {
-  const grid = document.getElementById("effortGrid");
-  if (!grid) return;
-  const COLS = 30, ROWS = 11;
-  const alpha = [0.07, 0.17, 0.3, 0.48, 0.72];
-  const pink = [244, 114, 182], lav = [167, 139, 250];
-  const rand = n => { const x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); };
-
-  for (let col = 0; col < COLS; col++) {
-    for (let row = 0; row < ROWS; row++) {
-      const p = col / (COLS - 1);                       // 0 → 1 : the effort keeps growing
-      let v = 0.1 + 0.9 * p + (rand(col * 7 + row) - 0.5) * 0.55;
-      v += (1 - row / (ROWS - 1) - 0.5) * 0.3;          // brightest toward the top right
-      v = Math.max(0, Math.min(0.999, v));
-      const level = Math.floor(v * 5);
-      const mix = (a, b) => Math.round(a + (b - a) * p);
-      const rgb = level === 0 ? lav : [mix(lav[0], pink[0]), mix(lav[1], pink[1]), mix(lav[2], pink[2])];
-      const cell = document.createElement("i");
-      cell.style.background = `rgba(${rgb[0]},${rgb[1]},${rgb[2]},${alpha[level]})`;
-      cell.style.setProperty("--d", `${(col * 45 + row * 12) / 1000}s`);
-      if (col === COLS - 1 && row === 0) { cell.className = "today"; cell.style.background = "rgba(244,114,182,.85)"; }
-      grid.appendChild(cell);
-    }
-  }
-})();
