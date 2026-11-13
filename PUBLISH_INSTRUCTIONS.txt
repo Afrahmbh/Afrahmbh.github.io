@@ -1,0 +1,6 @@
+This ZIP contains the UPDATED index.html with eight project cards.
+To publish: open your actual GitHub Pages repository, upload/replace index.html AND css/style.css, commit to main.
+IMPORTANT: Uploading a ZIP file as a single file does NOT update your site.
+Check GitHub repository index.html contains "ECG Arrhythmia Classification" after commit.
+Then hard-refresh the live page (Ctrl+Shift+R).
+The network card uses an illustration until a verified screenshot is available.

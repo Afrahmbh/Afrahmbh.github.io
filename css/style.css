@@ -758,3 +758,5 @@ body {
 .screenshot-fallback{display:none;text-align:center;padding:35px;color:#4f4265}
 .image-unavailable{display:flex;align-items:center;justify-content:center}
 .image-unavailable .screenshot-fallback{display:block}
+
+.portfolio-version{font-size:.9rem;text-align:center;color:#9a4382;margin:-12px 0 30px;font-weight:600}
