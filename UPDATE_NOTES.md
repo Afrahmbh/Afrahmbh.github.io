@@ -1,0 +1,1 @@
+Added ECG, Anime Database, ATM and Security Company Network project cards; corrected repository links; kept original project images. New cards use decorative graphics, not project screenshots. Existing images/profile.jpg is empty; replace it with your portrait if desired. Upload all files and folders to your GitHub Pages repository root. Verify exact team contributions and links.

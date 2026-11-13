@@ -750,3 +750,11 @@ body {
   .about-stats { grid-template-columns:1fr 1fr; }
   .edu-card { flex-direction:column; gap:16px; }
 }
+
+.project-placeholder{height:230px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px}.project-placeholder-icon{font-size:4.6rem;line-height:1.2}.project-placeholder-label{font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#50446b}.project-placeholder.ecg{background:linear-gradient(135deg,#e8edff,#ffe9f1)}.project-placeholder.anime{background:linear-gradient(135deg,#fff1dd,#f5e8ff)}.project-placeholder.atm{background:linear-gradient(135deg,#dff5ff,#e8e5ff)}.project-placeholder.network{background:linear-gradient(135deg,#ddf8f1,#e6ecff)}
+
+.project-screenshot{height:230px;position:relative;background:#e6ecff;overflow:hidden}
+.project-screenshot img{width:100%;height:100%;object-fit:contain;display:block}
+.screenshot-fallback{display:none;text-align:center;padding:35px;color:#4f4265}
+.image-unavailable{display:flex;align-items:center;justify-content:center}
+.image-unavailable .screenshot-fallback{display:block}
