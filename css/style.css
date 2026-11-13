@@ -306,7 +306,7 @@ body {
 
 /* ─── ABOUT ─── */
 .about-grid {
-  display:grid; grid-template-columns:1fr;
+  display:grid; grid-template-columns:1fr auto;
   gap:60px; align-items:start;
 }
 .about-text p {
