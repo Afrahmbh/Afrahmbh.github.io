@@ -225,23 +225,75 @@ body {
   display:flex; align-items:center; justify-content:center;
   position:relative; z-index:1;
 }
-.photo-ring {
-  width:320px; height:320px;
-  border-radius:50%;
-  padding:6px;
+/* hero visual: skills orbit around a rising data line */
+.orbit {
+  --size: 400px;
+  position:relative;
+  width:var(--size); height:var(--size);
+}
+.orbit::before, .orbit::after {
+  content:""; position:absolute; border-radius:50%;
+  border:1.5px dashed rgba(167,139,250,.45);
+}
+.orbit::before { inset:0; }
+.orbit::after  { inset:16%; border-color:rgba(244,114,182,.45); }
+
+.orbit-ring { position:absolute; inset:0; animation: spin 38s linear infinite; }
+.ring-inner { inset:16%; animation-duration:26s; animation-direction:reverse; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
+.chip {
+  position:absolute; top:50%; left:50%;
+  --r: calc(var(--size) / 2);
+  transform: rotate(var(--a)) translateY(calc(var(--r) * -1)) rotate(calc(var(--a) * -1));
+  margin:-17px 0 0 -40px; width:80px;
+  text-align:center;
+  padding:8px 0;
+  font-size:.85rem; font-weight:600; color:var(--rose-deep);
+  background:rgba(255,255,255,.92);
+  border:1.5px solid var(--border);
+  border-radius:99px;
+  box-shadow: var(--shadow);
+}
+.ring-inner .chip { --r: calc(var(--size) * .34); }
+/* keep the labels upright while the ring turns */
+.ring-outer .chip { animation: upright-o 38s linear infinite; }
+.ring-inner .chip { animation: upright-i 26s linear infinite reverse; }
+@keyframes upright-o { from { rotate:0deg; } to { rotate:-360deg; } }
+@keyframes upright-i { from { rotate:0deg; } to { rotate:-360deg; } }
+.chip-sm { color:#7c5cd6; font-size:.78rem; }
+
+.orbit-core {
+  position:absolute; inset:25%;
   background: var(--grad);
-  box-shadow: 0 20px 60px rgba(244,114,182,.35);
-  animation: floatPhoto 5s ease-in-out infinite;
+  display:grid; place-items:center;
+  box-shadow: 0 24px 60px rgba(244,114,182,.38);
+  border-radius:58% 42% 55% 45% / 48% 56% 44% 52%;
+  animation: morph 12s ease-in-out infinite;
+  overflow:hidden;
 }
-.photo-ring img {
-  width:100%; height:100%;
-  border-radius:50%;
-  object-fit:cover;
-  border:4px solid var(--white);
+@keyframes morph {
+  0%,100% { border-radius:58% 42% 55% 45% / 48% 56% 44% 52%; }
+  50%     { border-radius:44% 56% 42% 58% / 56% 44% 56% 44%; }
 }
-@keyframes floatPhoto {
-  0%,100%{ transform:translateY(0); }
-  50%    { transform:translateY(-12px); }
+.core-chart { position:absolute; inset:0; width:100%; height:100%; }
+.chart-line { stroke-dasharray:1; stroke-dashoffset:1; animation: draw 2.2s .6s cubic-bezier(.65,0,.35,1) forwards; }
+.chart-area { opacity:0; animation: fadein 1s 2s forwards; }
+.chart-dot  { opacity:0; transform-origin:164px 100px; animation: fadein .4s 2.6s forwards, ping 2.4s 3s ease-out infinite; }
+@keyframes draw   { to { stroke-dashoffset:0; } }
+@keyframes fadein { to { opacity:1; } }
+@keyframes ping   { 0%{ transform:scale(1); } 70%,100%{ transform:scale(1.5); opacity:.6; } }
+.core-mark {
+  position:relative; z-index:1;
+  font-family:'DM Serif Display', serif;
+  font-size:5.2rem; line-height:1; color:#fff;
+  transform:translateY(-34px);
+  text-shadow:0 4px 18px rgba(124,58,237,.35);
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit-ring, .chip, .orbit-core, .chart-dot { animation:none !important; }
+  .chart-line { animation:none; stroke-dashoffset:0; }
+  .chart-area, .chart-dot { opacity:1; animation:none; }
 }
 
 .scroll-hint {
@@ -735,7 +787,10 @@ body {
   .hero-sub { margin-inline:auto; }
   .hero-actions { justify-content:center; }
   .hero-photo { order:-1; }
-  .photo-ring { width:220px; height:220px; }
+  .orbit { --size: 320px; }
+  .orbit-core { inset:28%; }
+  .ring-inner .chip { --r: calc(var(--size) * .36); }
+  .core-mark { font-size:3.8rem; }
   .scroll-hint { display:none; }
 
   .about-grid { grid-template-columns:1fr; gap:40px; }
